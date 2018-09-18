@@ -15,8 +15,8 @@ open class BaseRouter {
     
     internal unowned let viewController: UIViewController
     
-    init(view: UIViewController) {
-        self.viewController = view
+    init(viewController: UIViewController) {
+        self.viewController = viewController
     }
     
 }

@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol DashboardViewProtocol: BaseViewProtocol {
+protocol DashboardViewControllerProtocol: BaseViewControllerProtocol {
     
     func show(viewModel: Dashboard.ViewModel)
 }
@@ -20,13 +20,13 @@ protocol DashboardPresenterProtocol: BasePresenterProtocol {
     
 }
 
-class DashboardPresenter<T: DashboardViewProtocol, U: DashboardRouterProtocol>: BasePresenter<T, U> {
+class DashboardPresenter<T: DashboardViewControllerProtocol, U: DashboardRouterProtocol>: BasePresenter<T, U> {
     
     let data: Dashboard.Data
     
-    init(view: T, router: U, data: Dashboard.Data) {
+    init(viewController: T, router: U, data: Dashboard.Data) {
         self.data = data
-        super.init(view: view, router: router)
+        super.init(viewController: viewController, router: router)
     }
     
 }
@@ -34,7 +34,7 @@ class DashboardPresenter<T: DashboardViewProtocol, U: DashboardRouterProtocol>: 
 extension DashboardPresenter: DashboardPresenterProtocol {
     
     func loadData() {
-        view.show(viewModel: Dashboard.ViewModel(name: data.name, lastName: data.lastName))
+        viewController.show(viewModel: Dashboard.ViewModel(name: data.name, lastName: data.lastName))
     }
     
     func performLogout() {

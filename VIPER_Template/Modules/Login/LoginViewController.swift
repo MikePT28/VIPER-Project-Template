@@ -1,5 +1,5 @@
 //
-//  LoginView.swift
+//  LoginViewController.swift
 //  VIPER
 //
 //  Created by Mike Pesate on 9/5/18.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class LoginView: BaseView {
+final class LoginViewController: BaseViewController {
     
     var presenter: LoginPresenterProtocol!
     
@@ -109,7 +109,7 @@ final class LoginView: BaseView {
     }
 }
 
-extension LoginView: LoginViewProtocol {
+extension LoginViewController: LoginViewControllerProtocol {
  
     func showError(message: String) {
         if !formStackView.subviews.contains(errorLabel) {

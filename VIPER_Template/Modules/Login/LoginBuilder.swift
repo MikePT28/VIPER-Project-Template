@@ -13,15 +13,15 @@ final class LoginBuilder {
     
     static func build() -> UIViewController {
         
-        let view: LoginView = LoginView()
-        let router: LoginRouter = LoginRouter(view: view)
+        let viewController: LoginViewController = LoginViewController()
+        let router: LoginRouter = LoginRouter(viewController: viewController)
         let loginInteractor = LoginInteractor()
-        let presenter: LoginPresenter = LoginPresenter(view: view, router: router, loginInteractor: loginInteractor)
+        let presenter: LoginPresenter = LoginPresenter(viewController: viewController, router: router, loginInteractor: loginInteractor)
         loginInteractor.presenter = presenter
         loginInteractor.loginWorker = LoginInteractorWorker(interactor: loginInteractor)
-        view.presenter = presenter
+        viewController.presenter = presenter
         
-        return view
+        return viewController
     }
     
 }

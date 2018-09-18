@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol LoginViewProtocol: BaseViewProtocol {
+protocol LoginViewControllerProtocol: BaseViewControllerProtocol {
     
     func showError(message: String)
     func removeError()
@@ -19,13 +19,13 @@ protocol LoginPresenterProtocol: BasePresenterProtocol {
     func doLogin(email: String?, password: String?)
 }
 
-final class LoginPresenter<T: LoginViewProtocol, U: LoginRouterProtocol>: BasePresenter<T, U> {
+final class LoginPresenter<T: LoginViewControllerProtocol, U: LoginRouterProtocol>: BasePresenter<T, U> {
     
     fileprivate let loginInteractor: LoginInteractorProtocol
     fileprivate let emailValidator: EmailValidatable
     fileprivate let passwordValidator: PasswordValidatable
     
-    init(view: T,
+    init(viewController: T,
          router: U,
          loginInteractor: LoginInteractorProtocol,
          emailValidator: EmailValidatable = EmailValidator(),
@@ -33,7 +33,7 @@ final class LoginPresenter<T: LoginViewProtocol, U: LoginRouterProtocol>: BasePr
         self.emailValidator = emailValidator
         self.passwordValidator = passwordValidator
         self.loginInteractor = loginInteractor
-        super.init(view: view, router: router)
+        super.init(viewController: viewController, router: router)
     }
     
 }
@@ -43,15 +43,15 @@ extension LoginPresenter: LoginPresenterProtocol {
     func doLogin(email: String?, password: String?) {
         guard let email = email, let password = password, !email.isEmpty, !password.isEmpty else {
             //Error
-            view.showError(message: "Email and password are required!")
+            viewController.showError(message: "Email and password are required!")
             return
         }
         guard emailValidator.validate(email) else {
-            view.showError(message: "Please enter a valid 'email' address")
+            viewController.showError(message: "Please enter a valid 'email' address")
             return
         }
         guard passwordValidator.validate(password) else {
-            view.showError(message: "Please enter a valid 'password'")
+            viewController.showError(message: "Please enter a valid 'password'")
             return
         }
         
@@ -63,12 +63,12 @@ extension LoginPresenter: LoginPresenterProtocol {
 extension LoginPresenter: LoginInteractorCallbackProtocol {
     
     func loginSuccess(data: Login.Expected) {
-        view.removeError()
+        viewController.removeError()
         router.presentDashboard(output: Login.Output(name: data.name, lastName: data.lastName))
     }
     
     func loginFailure(error: Login.Errors) {
-        view.showError(message: error.localizedDescription)
+        viewController.showError(message: error.localizedDescription)
     }
     
 }

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B2EEB3D2150DA5F007EEA40 /* BaseWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2EEB3B2150DA5E007EEA40 /* BaseWorker.swift */; };
+		2B2EEB3E2150DA5F007EEA40 /* BaseBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2EEB3C2150DA5E007EEA40 /* BaseBuilder.swift */; };
 		2B5F3B022147C1DA00C90BB6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B5F3AD22147C1B200C90BB6 /* LaunchScreen.storyboard */; };
 		2B5F3B032147C1DD00C90BB6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B5F3ADA2147C1B200C90BB6 /* Assets.xcassets */; };
 		2B5F3B042147C1DF00C90BB6 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B5F3AD92147C1B200C90BB6 /* Colors.xcassets */; };
@@ -17,7 +19,7 @@
 		2B5F3B092147C20200C90BB6 /* BaseInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5F3AE42147C1B200C90BB6 /* BaseInteractor.swift */; };
 		2B5F3B0A2147C20200C90BB6 /* BasePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5F3AE52147C1B200C90BB6 /* BasePresenter.swift */; };
 		2B5F3B0B2147C20200C90BB6 /* BaseRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5F3AE62147C1B200C90BB6 /* BaseRouter.swift */; };
-		2B5F3B0C2147C20200C90BB6 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5F3AE72147C1B200C90BB6 /* BaseView.swift */; };
+		2B5F3B0C2147C20200C90BB6 /* BaseControllerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5F3AE72147C1B200C90BB6 /* BaseControllerView.swift */; };
 		2B5F3B0D2147C20200C90BB6 /* UIColor+VIPER.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5F3AE92147C1B200C90BB6 /* UIColor+VIPER.swift */; };
 		2B5F3B0E2147C20200C90BB6 /* UIFont+VIPER.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5F3AEA2147C1B200C90BB6 /* UIFont+VIPER.swift */; };
 		2B5F3B0F2147C20200C90BB6 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5F3AEC2147C1B200C90BB6 /* NetworkService.swift */; };
@@ -29,12 +31,12 @@
 		2B5F3B152147C20200C90BB6 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5F3AF42147C1B200C90BB6 /* CardView.swift */; };
 		2B5F3B162147C20200C90BB6 /* LoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5F3AD62147C1B200C90BB6 /* LoginInteractor.swift */; };
 		2B5F3B172147C20200C90BB6 /* LoginInteractorWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5F3AD72147C1B200C90BB6 /* LoginInteractorWorker.swift */; };
-		2B5F3B182147C20200C90BB6 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5F3AF72147C1B200C90BB6 /* DashboardView.swift */; };
+		2B5F3B182147C20200C90BB6 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5F3AF72147C1B200C90BB6 /* DashboardViewController.swift */; };
 		2B5F3B192147C20200C90BB6 /* DashboardBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5F3AF82147C1B200C90BB6 /* DashboardBuilder.swift */; };
 		2B5F3B1A2147C20200C90BB6 /* DashboardPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5F3AF92147C1B200C90BB6 /* DashboardPresenter.swift */; };
 		2B5F3B1B2147C20200C90BB6 /* DashboardModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5F3AFA2147C1B200C90BB6 /* DashboardModels.swift */; };
 		2B5F3B1C2147C20200C90BB6 /* DashboardRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5F3AFB2147C1B200C90BB6 /* DashboardRouter.swift */; };
-		2B5F3B1D2147C20200C90BB6 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5F3AFD2147C1B200C90BB6 /* LoginView.swift */; };
+		2B5F3B1D2147C20200C90BB6 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5F3AFD2147C1B200C90BB6 /* LoginViewController.swift */; };
 		2B5F3B1E2147C20200C90BB6 /* LoginModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5F3AFE2147C1B200C90BB6 /* LoginModels.swift */; };
 		2B5F3B1F2147C20200C90BB6 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5F3AFF2147C1B200C90BB6 /* LoginPresenter.swift */; };
 		2B5F3B202147C20200C90BB6 /* LoginBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5F3B002147C1B200C90BB6 /* LoginBuilder.swift */; };
@@ -56,6 +58,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2B2EEB3B2150DA5E007EEA40 /* BaseWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseWorker.swift; sourceTree = "<group>"; };
+		2B2EEB3C2150DA5E007EEA40 /* BaseBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseBuilder.swift; sourceTree = "<group>"; };
 		2B5F3ABC2147C19900C90BB6 /* VIPER_Template.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VIPER_Template.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B5F3ACB2147C19A00C90BB6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2B5F3AD32147C1B200C90BB6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -70,7 +74,7 @@
 		2B5F3AE42147C1B200C90BB6 /* BaseInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseInteractor.swift; sourceTree = "<group>"; };
 		2B5F3AE52147C1B200C90BB6 /* BasePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasePresenter.swift; sourceTree = "<group>"; };
 		2B5F3AE62147C1B200C90BB6 /* BaseRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRouter.swift; sourceTree = "<group>"; };
-		2B5F3AE72147C1B200C90BB6 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		2B5F3AE72147C1B200C90BB6 /* BaseControllerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseControllerView.swift; sourceTree = "<group>"; };
 		2B5F3AE92147C1B200C90BB6 /* UIColor+VIPER.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+VIPER.swift"; sourceTree = "<group>"; };
 		2B5F3AEA2147C1B200C90BB6 /* UIFont+VIPER.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+VIPER.swift"; sourceTree = "<group>"; };
 		2B5F3AEC2147C1B200C90BB6 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
@@ -80,12 +84,12 @@
 		2B5F3AF12147C1B200C90BB6 /* BaseValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseValidator.swift; sourceTree = "<group>"; };
 		2B5F3AF22147C1B200C90BB6 /* FormValidators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormValidators.swift; sourceTree = "<group>"; };
 		2B5F3AF42147C1B200C90BB6 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
-		2B5F3AF72147C1B200C90BB6 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
+		2B5F3AF72147C1B200C90BB6 /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		2B5F3AF82147C1B200C90BB6 /* DashboardBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardBuilder.swift; sourceTree = "<group>"; };
 		2B5F3AF92147C1B200C90BB6 /* DashboardPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardPresenter.swift; sourceTree = "<group>"; };
 		2B5F3AFA2147C1B200C90BB6 /* DashboardModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardModels.swift; sourceTree = "<group>"; };
 		2B5F3AFB2147C1B200C90BB6 /* DashboardRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardRouter.swift; sourceTree = "<group>"; };
-		2B5F3AFD2147C1B200C90BB6 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		2B5F3AFD2147C1B200C90BB6 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		2B5F3AFE2147C1B200C90BB6 /* LoginModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModels.swift; sourceTree = "<group>"; };
 		2B5F3AFF2147C1B200C90BB6 /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
 		2B5F3B002147C1B200C90BB6 /* LoginBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginBuilder.swift; sourceTree = "<group>"; };
@@ -217,10 +221,12 @@
 		2B5F3AE32147C1B200C90BB6 /* BaseComponents */ = {
 			isa = PBXGroup;
 			children = (
+				2B2EEB3C2150DA5E007EEA40 /* BaseBuilder.swift */,
+				2B2EEB3B2150DA5E007EEA40 /* BaseWorker.swift */,
 				2B5F3AE42147C1B200C90BB6 /* BaseInteractor.swift */,
 				2B5F3AE52147C1B200C90BB6 /* BasePresenter.swift */,
 				2B5F3AE62147C1B200C90BB6 /* BaseRouter.swift */,
-				2B5F3AE72147C1B200C90BB6 /* BaseView.swift */,
+				2B5F3AE72147C1B200C90BB6 /* BaseControllerView.swift */,
 			);
 			path = BaseComponents;
 			sourceTree = "<group>";
@@ -274,7 +280,7 @@
 		2B5F3AF62147C1B200C90BB6 /* Dashboard */ = {
 			isa = PBXGroup;
 			children = (
-				2B5F3AF72147C1B200C90BB6 /* DashboardView.swift */,
+				2B5F3AF72147C1B200C90BB6 /* DashboardViewController.swift */,
 				2B5F3AF82147C1B200C90BB6 /* DashboardBuilder.swift */,
 				2B5F3AF92147C1B200C90BB6 /* DashboardPresenter.swift */,
 				2B5F3AFA2147C1B200C90BB6 /* DashboardModels.swift */,
@@ -286,7 +292,7 @@
 		2B5F3AFC2147C1B200C90BB6 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				2B5F3AFD2147C1B200C90BB6 /* LoginView.swift */,
+				2B5F3AFD2147C1B200C90BB6 /* LoginViewController.swift */,
 				2B5F3AFE2147C1B200C90BB6 /* LoginModels.swift */,
 				2B5F3AFF2147C1B200C90BB6 /* LoginPresenter.swift */,
 				2B5F3B002147C1B200C90BB6 /* LoginBuilder.swift */,
@@ -452,6 +458,7 @@
 				2B5F3B0F2147C20200C90BB6 /* NetworkService.swift in Sources */,
 				2B5F3B1C2147C20200C90BB6 /* DashboardRouter.swift in Sources */,
 				2B5F3B102147C20200C90BB6 /* Request.swift in Sources */,
+				2B2EEB3E2150DA5F007EEA40 /* BaseBuilder.swift in Sources */,
 				2B5F3B122147C20200C90BB6 /* RequestDispatcher.swift in Sources */,
 				2B5F3B072147C20200C90BB6 /* UITextField+Molds.swift in Sources */,
 				2B5F3B0E2147C20200C90BB6 /* UIFont+VIPER.swift in Sources */,
@@ -464,16 +471,17 @@
 				2B5F3B092147C20200C90BB6 /* BaseInteractor.swift in Sources */,
 				2B5F3B1F2147C20200C90BB6 /* LoginPresenter.swift in Sources */,
 				2B5F3B052147C20200C90BB6 /* AppDelegate.swift in Sources */,
-				2B5F3B1D2147C20200C90BB6 /* LoginView.swift in Sources */,
+				2B5F3B1D2147C20200C90BB6 /* LoginViewController.swift in Sources */,
+				2B2EEB3D2150DA5F007EEA40 /* BaseWorker.swift in Sources */,
 				2B5F3B082147C20200C90BB6 /* UILabel+Molds.swift in Sources */,
 				2B5F3B062147C20200C90BB6 /* Initializable.swift in Sources */,
 				2B5F3B142147C20200C90BB6 /* FormValidators.swift in Sources */,
 				2B5F3B132147C20200C90BB6 /* BaseValidator.swift in Sources */,
-				2B5F3B0C2147C20200C90BB6 /* BaseView.swift in Sources */,
+				2B5F3B0C2147C20200C90BB6 /* BaseControllerView.swift in Sources */,
 				2B5F3B152147C20200C90BB6 /* CardView.swift in Sources */,
 				2B5F3B212147C20200C90BB6 /* LoginRouter.swift in Sources */,
 				2B5F3B1A2147C20200C90BB6 /* DashboardPresenter.swift in Sources */,
-				2B5F3B182147C20200C90BB6 /* DashboardView.swift in Sources */,
+				2B5F3B182147C20200C90BB6 /* DashboardViewController.swift in Sources */,
 				2B5F3B172147C20200C90BB6 /* LoginInteractorWorker.swift in Sources */,
 				2B5F3B1E2147C20200C90BB6 /* LoginModels.swift in Sources */,
 				2B5F3B192147C20200C90BB6 /* DashboardBuilder.swift in Sources */,

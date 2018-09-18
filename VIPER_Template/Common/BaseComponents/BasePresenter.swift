@@ -8,18 +8,18 @@
 
 import Foundation
 
-public protocol BaseViewProtocol: class { }
+public protocol BaseViewControllerProtocol: class { }
 
 public protocol BasePresenterProtocol: class { }
 
-public class BasePresenter<T: BaseViewProtocol, U: BaseRouterProtocol> {
-    
-    internal unowned let view: T
+public class BasePresenter<T: BaseViewControllerProtocol, U: BaseRouterProtocol> {
+
+    internal unowned let viewController: T
     internal let router: U
-    
-    init(view: T, router: U) {
-        self.view = view
+
+    init(viewController: T, router: U) {
+        self.viewController = viewController
         self.router = router
     }
-    
+
 }

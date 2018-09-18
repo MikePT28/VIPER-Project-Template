@@ -15,12 +15,12 @@ final class DashboardBuilder {
         
         let data = Dashboard.Data(name: input.name, lastName: input.lastName)
         
-        let view: DashboardView = DashboardView()
-        let router: DashboardRouter = DashboardRouter(view: view)
-        let presenter: DashboardPresenter = DashboardPresenter(view: view, router: router, data: data)
-        view.presenter = presenter
+        let viewController: DashboardViewController = DashboardViewController()
+        let router: DashboardRouter = DashboardRouter(viewController: viewController)
+        let presenter: DashboardPresenter = DashboardPresenter(viewController: viewController, router: router, data: data)
+        viewController.presenter = presenter
 
-        return view
+        return viewController
     }
     
 }

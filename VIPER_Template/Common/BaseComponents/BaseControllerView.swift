@@ -1,5 +1,5 @@
 //
-//  BaseView.swift
+//  BaseControllerView.swift
 //  VIPER
 //
 //  Created by Mike Pesate on 9/5/18.
@@ -13,18 +13,18 @@ protocol ViewSetupProtocol {
     func setupConstraints()
 }
 
-class BaseView: UIViewController, ViewSetupProtocol {
+class BaseViewController: UIViewController, ViewSetupProtocol {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupComponents()
         setupConstraints()
     }
-    
+
     func setupComponents() {
         fatalError("Missing implementation of \"setupComponents\"")
     }
-    
+
     func setupConstraints() {
         fatalError("Missing implementation of \"setupConstraints\"")
     }

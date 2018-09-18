@@ -1,5 +1,5 @@
 //
-//  DashboardView.swift
+//  DashboardViewController.swift
 //  VIPER
 //
 //  Created by Mike Pesate on 06/09/2018.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class DashboardView: BaseView {
+final class DashboardViewController: BaseViewController {
 
     var presenter: DashboardPresenterProtocol!
 
@@ -85,7 +85,7 @@ final class DashboardView: BaseView {
     
 }
 
-extension DashboardView: DashboardViewProtocol {
+extension DashboardViewController: DashboardViewControllerProtocol {
     
     func show(viewModel: Dashboard.ViewModel) {
         name.text = viewModel.name
