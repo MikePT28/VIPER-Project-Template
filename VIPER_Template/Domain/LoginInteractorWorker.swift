@@ -8,33 +8,16 @@
 
 import Foundation
 
-protocol LoginInteractorWorkerProtocol: class {
-    
-    func doLogin(email: String, password: String)
-}
-
-protocol LoginInteractorWorkerCallbackProtocol: class {
-    
-    func loginSuccess(data: Login.Expected)
-    func loginFailure(error: Login.Errors)
-    
-}
-
-class LoginInteractorWorker {
+typealias LoginInteractorWorkerAlias = BaseWorker<(String, String), Login.Expected, Login.Errors>
+class LoginInteractorWorker: LoginInteractorWorkerAlias {
     
     fileprivate let dispatcher: RequestDispatcherProtocol
-    fileprivate unowned let interactor: LoginInteractorWorkerCallbackProtocol
     
-    init(dispatcher: RequestDispatcherProtocol = RequestDispatcher(), interactor: LoginInteractorWorkerCallbackProtocol) {
+    init(dispatcher: RequestDispatcherProtocol = RequestDispatcher()) {
         self.dispatcher = dispatcher
-        self.interactor = interactor
     }
     
-}
-
-extension LoginInteractorWorker: LoginInteractorWorkerProtocol {
-    
-    func doLogin(email: String, password: String) {
+    override func job(input: (String, String)?, completion: @escaping ((WorkerResult<Login.Expected, Login.Errors>) -> Void)) {
         
         let request = Request(service: LoginNetworkService.login, body: nil, headers: nil)
         
@@ -42,14 +25,15 @@ extension LoginInteractorWorker: LoginInteractorWorkerProtocol {
             
             switch result {
             case .sucess(let data):
-                self.interactor.loginSuccess(data: data)
+                completion(WorkerResult.success(data))
             case .failure:
-                self.interactor.loginFailure(error: Login.Errors.invalidCredentials)
+                completion(WorkerResult.failure(Login.Errors.invalidCredentials))
                 
             }
             
         }
         dispatcher.dispatch(request: request, completion: handler)
+        
     }
-
+    
 }

@@ -18,7 +18,7 @@ final class LoginBuilder {
         let loginInteractor = LoginInteractor()
         let presenter: LoginPresenter = LoginPresenter(viewController: viewController, router: router, loginInteractor: loginInteractor)
         loginInteractor.presenter = presenter
-        loginInteractor.loginWorker = LoginInteractorWorker(interactor: loginInteractor)
+        loginInteractor.loginWorker = LoginInteractorWorker()
         viewController.presenter = presenter
         
         return viewController

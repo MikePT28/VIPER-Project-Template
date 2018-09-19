@@ -24,7 +24,7 @@ protocol LoginInteractorCallbackProtocol: BaseInteractorCallbackProtocol {
 class LoginInteractor: BaseInteractor {
     
     weak var presenter: LoginInteractorCallbackProtocol!
-    var loginWorker: LoginInteractorWorkerProtocol!
+    var loginWorker: LoginInteractorWorkerAlias!
     
 }
 
@@ -32,19 +32,16 @@ extension LoginInteractor: LoginInteractorProtocol {
     
     func doLogin(email: String, password: String) {
         
-        loginWorker.doLogin(email: email, password: password)
-    }
-    
-}
-
-extension LoginInteractor: LoginInteractorWorkerCallbackProtocol {
-    
-    func loginSuccess(data: Login.Expected) {
-        presenter.loginSuccess(data: data)
-    }
-    
-    func loginFailure(error: Login.Errors) {
-        presenter.loginFailure(error: error)
+        loginWorker.execute(input: (email, password)) { (result) in
+            
+            switch result {
+            case .success(let data):
+                self.presenter.loginSuccess(data: data)
+            case .failure(let error):
+                self.presenter.loginFailure(error: error)
+            }
+            
+        }
     }
     
 }
